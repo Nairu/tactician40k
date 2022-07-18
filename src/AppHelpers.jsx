@@ -47,7 +47,6 @@ export function jsonToFormattedRoster(json: RosterfileJson): Roster {
   // Array check for a weird bug where locally, roster is an object and in prod its an array with one entry. To be investigated,
   // probably a problem related with the version of an NPM depepency. Remove this hack to reproduce the issue, with the wolfbang list.
   const jsonRosterData = Array.isArray(json.roster) ? json.roster[0] : json.roster;
-  console.log(json);
 
   // Convert array to object for easier manipulation
   const costs: {

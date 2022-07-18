@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import type { Node } from 'react';
 import SelectionView from './SelectionView';
 import type { Force } from '../Types';
+import { IGNORE_TYPES } from '../config';
 
 type ForcesProps = {
   forces: Array<Force>
@@ -23,7 +24,9 @@ type ForceProps = {
 class ForceView extends Component<ForceProps> {
   render() {
     const { force } = this.props;
-    const selectionsJSX = force.selections.map(selection => <SelectionView selection={selection} />);
+    const exclude_ignores = force.selections.filter(selection => !IGNORE_TYPES.includes(selection.name.toLowerCase())); 
+    const selectionsJSX = exclude_ignores.map(selection => <SelectionView key={selection.id} selection={selection} />);
+    //console.log(selectionsJSX);
     
     return (
       <div>

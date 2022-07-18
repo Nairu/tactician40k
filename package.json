@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "react-scripts build && cp ./_redirects build/",
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "start:prod": "serve -s build",
     "test": "jest --coverage",
     "eject": "react-scripts eject",

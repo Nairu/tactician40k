@@ -25,7 +25,7 @@ class RosterView extends Component<Props, State> {
 
     const json = parseXmlToJson(storageData);
     const roster: Roster = jsonToFormattedRoster(json);
-    console.log('Roster:',roster);
+    console.log('Roster:', roster);
     this.state = {
       roster: roster
     };
