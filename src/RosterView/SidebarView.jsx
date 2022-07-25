@@ -78,7 +78,7 @@ class SidebarView extends Component<Props> {
           grouping = "Reference";
         }
 
-        if (!groupings.contains(grouping)) {
+        if (!(grouping in groupings)) {
           grouping = "Other"
         }
 
