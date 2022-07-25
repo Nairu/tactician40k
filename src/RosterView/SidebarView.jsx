@@ -46,7 +46,8 @@ class SidebarView extends Component<Props> {
       "Lord of War": [],
       "Configuration": [],
       "Reference": [],
-      "Ignore": []
+      "Ignore": [],
+      "Other": []
     }
 
     this.props.forces.forEach(force => {
@@ -75,6 +76,10 @@ class SidebarView extends Component<Props> {
 
         if (selection.name.startsWith("[Reference]")) {
           grouping = "Reference";
+        }
+
+        if (!groupings.contains(grouping)) {
+          grouping = "Other"
         }
 
         const val = <li key={selection.id}>
